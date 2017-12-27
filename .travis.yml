@@ -14,7 +14,7 @@ before_script:
 script:
   - pip install pexpect
   - sh ./build.sh
-  - python ./run.py
+  - sudo python ./run.py
 
 env:
   - RTT_BSP='qemu-vexpress-a9' RTT_TOOL_CHAIN='sourcery-arm'
