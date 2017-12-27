@@ -1,2 +1,1 @@
-# te
-TE in RT-Thread
+Testsuite Environment for RT-Thread.
