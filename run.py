@@ -2,6 +2,8 @@
 # encoding: utf-8
 
 import qemubox
+import time
+
 from testcase import *
 from testcase.filesystem import *
 from testcase.kernel import *
@@ -45,4 +47,5 @@ if __name__ == '__main__':
 
         RunTestCase(box)
 
+        time.sleep(0.5)
         qemubox.BoxClose(box)
