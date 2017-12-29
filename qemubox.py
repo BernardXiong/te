@@ -64,4 +64,9 @@ def BoxLogClear(box):
     after  = box.after
 
 def BoxClose(box):
-    box.close(force=True)
+    box.sendcontrol('a')
+    box.send('c')
+    try:
+        box.close(force=True)
+    except:
+        print "done"
