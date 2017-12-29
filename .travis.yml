@@ -12,9 +12,9 @@ before_script:
   - "[ $RTT_TOOL_CHAIN = 'sourcery-arm' ] && curl -s https://launchpadlibrarian.net/287101520/gcc-arm-none-eabi-5_4-2016q3-20160926-linux.tar.bz2 | sudo tar xjf - -C /opt && export RTT_EXEC_PATH=/opt/gcc-arm-none-eabi-5_4-2016q3/bin && /opt/gcc-arm-none-eabi-5_4-2016q3/bin/arm-none-eabi-gcc --version || true"
 
 script:
-  - sudo pip install pexpect
+  - pip install pexpect
   - sh ./build.sh
-  - sudo python ./run.py
+  - ./run.py
 
 env:
   - RTT_BSP='qemu-vexpress-a9' RTT_TOOL_CHAIN='sourcery-arm'
