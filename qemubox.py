@@ -47,7 +47,7 @@ def BoxFileSystemFormat(box):
     return True
 
 def BoxReload(box):
-    box.close(force = True)
+    BoxClose(box)
     return BoxStartup()
 
 def BoxRunCmd(box, cmd, expect = None):
