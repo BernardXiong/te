@@ -1,12 +1,15 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
+import sys
 import pexpect
 
 qemu_cmd = 'qemu-system-arm -M vexpress-a9 -kernel rt-thread/bsp/qemu-vexpress-a9/rtthread.elf -nographic -sd sd.bin'
 
 def BoxStartup():
     child = pexpect.spawn(qemu_cmd)
+    child.logfile_read = file('log.txt', 'w')
+
     child.expect_exact(' \ | /')
     qemu_output = child.before
 
@@ -62,6 +65,10 @@ def BoxRunCmd(box, cmd, expect = None):
 def BoxLogClear(box):
     before = box.before
     after  = box.after
+
+def BoxDelay(box, second):
+    import time
+    time.sleep(second)
 
 def BoxClose(box):
     box.sendcontrol('a')

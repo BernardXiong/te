@@ -7,9 +7,8 @@ testcase example
 import qemubox
 
 def run(box):
-    qemubox.BoxLogClear(box)
-
-    qemubox.BoxRunCmd(box, 'ps', 'msh')
+    qemubox.BoxRunCmd(box, 'ps', ['tidle'])
+    # qemubox.BoxDelay(box, 1)
     print box.before
     print box.after
 
