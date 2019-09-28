@@ -15,8 +15,9 @@ script:
   - pip install pexpect
   - # sh ./build.sh
   - # ./run.py
-  - printenv
-  - git --no-pager diff --name-only origin/master
+  - # printenv
+  - git --no-pager diff --name-only origin/master > pr_list.txt
+  - cat pr_list.txt
 
 env:
   - RTT_BSP='qemu-vexpress-a9' RTT_TOOL_CHAIN='sourcery-arm'
